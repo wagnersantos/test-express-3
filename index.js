@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 const app = express();
 
 function countProjectByYear(project, yearSelect) {
-  return project.filter((projeto) => {
+  return project.filter((project) => {
     const yearCreated = new Date(project.created_at).getFullYear();
     return yearCreated === yearSelect;
   }).length;
