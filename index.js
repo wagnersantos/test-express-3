@@ -11,10 +11,12 @@ function countProjectByYear(project, yearSelect) {
 }
 
 app.get("/graphics", async (req, res) => {
+  console.log(req.query);
   const result = await fetch(
     `https://api.github.com/users/${req.query.user}/repos`,
   );
   const data = await result.json();
+  console.log(data);
 
   const years = data
     .map((item) => {
